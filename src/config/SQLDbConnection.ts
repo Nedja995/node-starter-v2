@@ -10,9 +10,9 @@ export class SQLDbConnection {
   public initializeDbConnection = () => {
     const config = constants.SQL;
     Logger.info(`connecting to ${constants.environment} SQL ...`);
-
+      // @ts-ignore
     createConnection({
-      type: "postgres",
+      type: config.dialect,
       host: config.host,
       port: config.port,
       username: config.username,
